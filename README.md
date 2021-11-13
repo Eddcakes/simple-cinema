@@ -10,6 +10,10 @@ This browser extension lets the user choose videos on the page to destructively 
 - pick a background colour for the page (makes a theatre mode)
 - pick playback speed
 
+### preview
+
+![](preview.gif)
+
 ### Run locally
 
 1. Open `chrome://extensions/` (or any chromium based extension page)
