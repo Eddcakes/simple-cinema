@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div id="noVideoText">
+      <p>Cannot find video elements in this page</p>
+    </div>
+    <div id="videosAvailable">
+      <fieldset id="videosList">
+        <legend>Replace the page with</legend>
+        <div id="radioGroup"></div>
+      </fieldset>
+      <div class="actions">
+        <div class="buttons">
+          <button id="clearBtn" class="clear btn">Clear outline</button>
+          <button id="submitBtn" class="submit btn">Select video</button>
+        </div>
+        <div class="playback">
+          <label for="controls">Playback speed</label>
+          <div id="controls" class="controls">
+            <input
+              id="playbackRange"
+              type="range"
+              min="0.1"
+              max="2"
+              value="1"
+              step="0.1"
+            />
+            <input
+              id="playbackNumber"
+              type="number"
+              min="0.1"
+              max="2"
+              value="1"
+              step="0.1"
+            />
+          </div>
+          <div class="backgroundColor">
+            <label for="changeColor">Background colour</label>
+            <input id="changeColor" type="color" value="#25292e" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+:root {
+  --spacing: 0.5em;
+  --primary-color: rgb(46, 118, 255);
+  --dark-color: rgb(32, 82, 178);
+  --secondary-color: rgb(32, 82, 178);
+  --light-color: white;
+}
+
+body {
+  height: auto;
+  width: 200px;
+  padding: var(--spacing);
+  font: 0.8rem 'Fira Sans', sans-serif;
+}
+
+#noVideoText {
+  display: none;
+}
+
+input[type='radio'] {
+  margin: var(--spacing);
+}
+
+#radioGroup {
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+}
+
+legend {
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  padding: 3px 6px;
+}
+
+fieldset {
+  margin: 0;
+}
+
+.actions,
+.playback,
+.backgroundColor {
+  display: grid;
+  gap: var(--spacing);
+}
+
+.buttons input,
+.playback input {
+  margin: 0;
+  padding: 0;
+}
+
+.actions .buttons {
+  display: flex;
+  justify-content: space-between;
+  padding-top: var(--spacing);
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.controls input[type='number'] {
+  padding: var(--spacing);
+  border: 1px solid var(--primary-color);
+  width: 3rem;
+}
+
+.btn {
+  all: unset;
+  padding: var(--spacing);
+  width: auto;
+  font-weight: 600;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.btn:not(:disabled):active {
+  transform: translateY(1px);
+}
+
+.btn:disabled {
+  background-color: #9399a0;
+  cursor: not-allowed;
+}
+
+button.submit {
+  background-color: var(--primary-color);
+  color: var(--light-color);
+}
+
+button.submit:not(:disabled):hover {
+  background-color: var(--secondary-color);
+}
+
+button.clear {
+  border: 1px solid var(--primary-color);
+}
+
+button.color {
+  height: 1.5rem;
+  width: 1.5rem;
+  outline: none;
+}

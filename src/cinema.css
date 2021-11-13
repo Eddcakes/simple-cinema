@@ -1,0 +1,4 @@
+.sc-selectedVideo {
+  box-shadow: 0px 0px 5px rgb(46, 118, 255);
+  outline: rgb(46, 118, 255) solid 8px;
+}
