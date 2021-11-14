@@ -1,0 +1,22 @@
+{
+  "name": "simple-cinema",
+  "version": "1.0.0",
+  "description": "This browser extension lets the user choose videos on the page to destructively replace page content.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eddcakes/simple-cinema.git"
+  },
+  "author": "Eddcakes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eddcakes/simple-cinema/issues"
+  },
+  "homepage": "https://github.com/Eddcakes/simple-cinema#readme",
+  "dependencies": {
+    "@types/chrome": "^0.0.163"
+  }
+}
