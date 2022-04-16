@@ -195,9 +195,14 @@ function replacePageWithVideo(videoId) {
   topLevel.appendChild(chosenNode);
   body.remove();
   chosenNode.controls = true;
+  // replaces all classes, getting rid of our highlight and any original classes
+  chosenNode.className = 'sc-currentVideo';
+  // set initial bg colour
+  chrome.storage.sync.get('color', ({ color }) => {
+    topLevel.style.backgroundColor = color;
+  });
 }
 
-//function set playback speed
 function setPlaybackSpeed(speed) {
   // we expect only 1 video element on the page now
   const video = document.querySelector('video');
@@ -205,10 +210,12 @@ function setPlaybackSpeed(speed) {
     video.playbackRate = speed;
   }
 }
+
 function setPageBackgroundColor(newColor) {
+  const topLevel = document.querySelector('html');
   chrome.storage.sync.set({ color: newColor });
   chrome.storage.sync.get('color', () => {
-    document.querySelector('html').style.backgroundColor = newColor;
+    topLevel.style.backgroundColor = newColor;
   });
 }
 
