@@ -79,6 +79,33 @@ const changePlaybackSpeed = async (evt) => {
   });
 };
 
+const toggleClearColumns = async (evt) => {
+  let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+  const shouldClear = evt.target.checked;
+
+  chrome.scripting.executeScript({
+    target: { tabId: tab.id },
+    function: (shouldClear) => {
+      const columnClass = 'lg:grid-cols-[1fr_400px]';
+      const frClass = 'lg:grid-cols-[1fr]';
+
+      if (shouldClear) {
+        document
+          .querySelectorAll('.' + CSS.escape(columnClass))
+          .forEach((el) => {
+            el.classList.remove(columnClass);
+            el.classList.add(frClass);
+          });
+      } else {
+        // doesnt look like this works
+        el.classList.remove(frClass);
+        el.classList.add(columnClass);
+      }
+    },
+    args: [shouldClear],
+  });
+};
+
 /* message handler, popup POV */
 function addVideoMsgToList(req, sender, sendResponse) {
   switch (req.type) {
@@ -226,6 +253,7 @@ const submitBtn = document.querySelector('#submitBtn');
 const videoList = document.querySelector('#radioGroup');
 const playbackRange = document.querySelector('#playbackRange');
 const playbackNumber = document.querySelector('#playbackNumber');
+const clearColumnsCheckbox = document.querySelector('#clearColummns');
 
 chrome.runtime.onMessage.addListener(addVideoMsgToList);
 // set playback speed for controls
@@ -250,4 +278,5 @@ submitBtn.addEventListener('click', submitVideo);
 colorBtn.addEventListener('change', changeBackgroundColor);
 playbackRange.addEventListener('change', changePlaybackSpeed);
 playbackNumber.addEventListener('change', changePlaybackSpeed);
+clearColumnsCheckbox.addEventListener('change', toggleClearColumns);
 /* end of main */
