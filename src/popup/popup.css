@@ -13,10 +13,6 @@ body {
   font: 0.8rem 'Fira Sans', sans-serif;
 }
 
-#noVideoText {
-  display: none;
-}
-
 input[type='radio'] {
   margin: var(--spacing);
 }

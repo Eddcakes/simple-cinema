@@ -16,7 +16,13 @@ This browser extension lets the user choose videos on the page to destructively 
 
 ### Run locally
 
-1. Open `chrome://extensions/` (or any chromium based extension page)
-2. Turn developer mode on
-3. Click "Load unpacked" button and load the `src` directory
-4. Pin extension for easy use
+1. Install dependencies and build the extension:
+   ```bash
+   pnpm install
+   pnpm build
+   ```
+   (Use `pnpm dev` to rebuild automatically on file changes.)
+2. Open `chrome://extensions/` (or any Chromium-based extensions page)
+3. Turn developer mode on
+4. Click "Load unpacked" button and load the `dist` directory
+5. Pin extension for easy use
